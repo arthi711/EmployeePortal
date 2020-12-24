@@ -37,7 +37,12 @@ public class EmployeeDetailsService {
 			resultEmpDetailsList.add(empDTO);
 		}
 
+		//sort based on first name
+		resultEmpDetailsList.sort((EmployeeDetailsDTO s1, EmployeeDetailsDTO s2)->
+					s1.getFirstName().compareTo(s2.getFirstName()));  
+		
 		logger.info("Employee details : {}", resultEmpDetailsList);
+		
 		return resultEmpDetailsList;
 	}
 }
